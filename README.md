@@ -1,4 +1,4 @@
-This repo aims at comparing Seq2Seq model using different neural architecture in correcting grammar. Currently our models include RNN-based, LSTM-based, transformer-based models. 
+This repo aims at comparing Seq2Seq model using different neural architecture in correcting grammar errors in English. Currently our models include RNN-based, LSTM-based, transformer-based models. 
 ### Requirement and installation:
 ## for training and generation
 python: 3.7.6
