@@ -1,0 +1,18 @@
+python train.py bin \
+    --save-dir checkpoints/lstm_all_dim_273_attention --arch lstm \
+    --dropout 0.2 \
+    --optimizer adam --lr 0.005 --lr-shrink 0.5 \
+    --max-tokens 5500 --task translation    \
+    --keep-best-checkpoints 10 \
+    --bpe subword_nmt \
+    --encoder-embed-dim 273 \
+    --decoder-embed-dim 273 \
+    --encoder-hidden-size 273 \
+    --decoder-hidden-size 273 \
+    --encoder-layers 3 \
+    --decoder-layers 3 \
+    --update-freq 8 \
+    --patience 8 \
+    --warmup-updates 200 \
+    --decoder-attention True\
+    --fp16

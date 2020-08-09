@@ -1,0 +1,21 @@
+python train.py temp_single_vocab/bpe_single_dict/bin \
+    --save-dir checkpoints/transformer_emb_256_ffc_512_fp16_decoder_shared --arch transformer \
+    --activation-fn relu \
+    --dropout 0.1 --attention-dropout 0.1 --activation-dropout 0.1 \
+    --encoder-embed-dim 256 \
+    --encoder-ffn-embed-dim 512 --encoder-layers 3 \
+    --encoder-attention-heads 4 \
+    --decoder-embed-dim 256 --decoder-ffn-embed-dim 512 \
+    --decoder-layers 3 \
+    --decoder-attention-heads 4 \
+    --optimizer adam --lr 0.005 --lr-shrink 0.5 \
+    --max-tokens 8000 --task translation        \
+    --keep-best-checkpoints 1 \
+    --bpe subword_nmt \
+    --update-freq 8 \
+    --patience 8 \
+    --best-checkpoint-metric loss \
+    --decoder-normalize-before --encoder-normalize-before \
+    --weight-decay 0.1 --fp16 \
+    --share-all-embeddings \
+    --share-decoder-input-output-embed

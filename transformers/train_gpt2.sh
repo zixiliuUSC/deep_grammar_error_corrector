@@ -1,0 +1,22 @@
+python examples/run_language_modeling.py \
+    --train_data_file=temp_gpt2/gpt2_train_conll.txt \
+    --output_dir=checkpoints/gpt2 \
+    --model_type=gpt2 \
+    --model_name_or_path=gpt2 \
+    --eval_data_file=temp_gpt2/gpt2_val_conll.txt \
+    --line_by_line \
+    --do_train \
+    --do_eval \
+    --evaluate_during_training \
+    --per_gpu_train_batch_size=4 \
+    --per_gpu_eval_batch_size=4 \
+    --gradient_accumulation_steps=5 \
+    --learning_rate=8e-5 \
+    --weight_decay=0.075  \
+    --adam_epsilon=1e-8 \
+    --warmup_steps=500 \
+    --max_grad_norm=5.0 \
+    --num_train_epochs=20 \
+    --logging_steps=500 \
+    --save_steps=500 \
+    --fp16 
